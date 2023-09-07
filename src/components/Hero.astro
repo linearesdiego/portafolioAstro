@@ -3,12 +3,12 @@
 ---
 
 <section class="w-11/12 py-3 mx-auto overflow-hidden">
-  <div class="flex items-center justify-between">
+  <div class="flex flex-col lg:flex-row items-center justify-between">
     <div class="">
       <div class="flex flex-col gap-3">
         <span
-          class="text-xl p-3 rounded-[16px] bg-custom-color text-blue-800 font-bold w-fit"
-          >👋ludos!</span
+          class="text-xl p-3 rounded-[16px] bg-custom-color text-blue-900 font-bold w-fit"
+          >👋Saludos!</span
         >
         <div class="">
           <h1 class="text-white text-6xl font-bold">Diego</h1>
@@ -21,7 +21,8 @@
         <a
           href="https://www.linkedin.com/in/diego-lineares-40576b215/"
           target="_blank"
-          ><img class="cursor-pointer" src="/linkedin.svg" alt="" /></a>
+          ><img class="cursor-pointer" src="/linkedin.svg" alt="" /></a
+        >
         <a href="https://github.com/linearesdiego" target="_blank">
           <img class="cursor-pointer" src="/github.svg" alt="" />
         </a>
@@ -33,9 +34,22 @@
 
     <div class="">
       <a
-        class="border border-blue-500 px-6 py-4 rounded-lg hover:border-blue-300 text-white font-bold cursor-pointer tracking-wider" download="">
+        href="/CVDiegoLineares.pdf"
+        class="border border-blue-500 px-6 py-4 rounded-lg hover:border-blue-300 text-white font-bold cursor-pointer tracking-wider"
+        download="/CVDiegoLineares.pdf"
+      >
         Descargar CV
-    </a>
+        <img
+          class="w-[20px] invert-1 inline-block"
+          src="/arrow-down.svg"
+          alt=""
+        />
+      </a>
     </div>
   </div>
 </section>
+<style>
+  .invert-1 {
+    filter: invert(1);
+  }
+</style>
