@@ -1,4 +1,46 @@
 ---
+type tarjetas = {
+    title: string;
+    description: string;
+    lenguajes: string[];
+    img: string;
+    linkGit: string;
+    link: string;
+};
+const data: tarjetas[] = [
+    {
+        title: "Sistema de stock",
+        description: "Sistema de stock",
+        lenguajes: ["Html", "Css", "React JS", "Redux Tookit"],
+        img: "/sistemaStock.jpeg",
+        linkGit: "",
+        link: "",
+    },
+    {
+        title: "Sistema de stock (Carniceria)",
+        description: "Sistema de stock",
+        lenguajes: ["Html", "Css", "React JS", "Redux Tookit"],
+        img: "/sistemaStock.jpeg",
+        linkGit: "",
+        link: "",
+    },
+    {
+        title: "Booking Clone",
+        description: "Sistema de stock",
+        lenguajes: ["Html", "Css", "React js"],
+        img: "/sistemaStock.jpeg",
+        linkGit: "",
+        link: "",
+    },
+    {
+        title: "Todo App (Drag and Drop)",
+        description: "Sistema de stock",
+        lenguajes: ["Html", "Css", "React JS"],
+        img: "/sistemaStock.jpeg",
+        linkGit: "",
+        link: "",
+    },
+];
 ---
 
 <section class="w-11/12 py-3 mx-auto overflow-hidden">
@@ -8,6 +50,21 @@
             >💼 Proyectos · Experiencias</span
         >
 
-        <h1 class="text-white text-2xl font-bold text-center">PROYECTOS</h1>
+        <h1 class="text-white text-2xl font-bold text-center mb-4">
+            PROYECTOS
+        </h1>
+    </div>
+    <div
+        class="w-full flex flex-col items-center rounded-md overflow-hidden md:flex-row justify-center gap-6"
+    >
+        {
+            data.map((proyecto) => (
+                <div class="w-96 h-[400px] border-2 border-blue-950 rounded-md ">
+                    <div class="w-full">
+                        <img src={proyecto.img} alt="" />
+                    </div>
+                </div>
+            ))
+        }
     </div>
 </section>
