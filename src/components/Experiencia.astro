@@ -2,7 +2,7 @@
 type tarjetas = {
     title: string;
     description: string;
-    lenguajes: string;
+    lenguajes: string[];
     img: string;
     linkGit: string;
     link: string;
@@ -10,24 +10,44 @@ type tarjetas = {
 const data: tarjetas[] = [
     {
         title: "Sistema de stock",
-        description: "Sistema de stock",
-        lenguajes: "Html, Css, React, JS, Redux Tookit",
+        description:
+            "Desarrollé un robusto Sistema de Stock utilizando una variedad de tecnologías web modernas. Este sistema fue diseñado para abordar eficazmente los desafíos de gestión de inventario.",
+        lenguajes: [
+            "/logos/html.svg",
+            "/logos/css.svg",
+            "/logos/jsl.svg",
+            "/logos/logos_react.svg",
+            "/logos/redux.svg",
+        ],
         img: "/sistemaStock.jpeg",
         linkGit: "",
         link: "",
     },
     {
         title: "Sistema de stock (Carniceria)",
-        description: "Sistema de stock",
-        lenguajes: "Html, Css, React, JS, Redux Tookit",
+        description:
+            "Desarrollé un robusto Sistema de Stock utilizando una variedad de tecnologías web modernas. Este sistema fue diseñado para abordar eficazmente los desafíos de gestión de inventario.",
+        lenguajes: [
+            "/logos/html.svg",
+            "/logos/css.svg",
+            "/logos/jsl.svg",
+            "/logos/logos_react.svg",
+            "/logos/redux.svg",
+        ],
         img: "/sistemaStock.jpeg",
         linkGit: "",
         link: "",
     },
     {
         title: "Booking Clone",
-        description: "Sistema de stock",
-        lenguajes: "Html, Css, React, JS",
+        description:
+            "Este proyecto es un clon inspirado en la aplicación original Booking que se centra en metodo para alquilar hoteles,etc. Mi objetivo al crear este clon fue aprender y practicar mis habilidades de desarrollo web.",
+        lenguajes: [
+            "/logos/html.svg",
+            "/logos/css.svg",
+            "/logos/jsl.svg",
+            "/logos/logos_react.svg",
+        ],
         img: "/sistemaStock.jpeg",
         linkGit: "",
         link: "",
@@ -35,12 +55,18 @@ const data: tarjetas[] = [
     {
         title: "Todo App (Drag and Drop)",
         description: "Sistema de stock",
-        lenguajes: "Html, Css, React, JS",
+        lenguajes: [
+            "/logos/html.svg",
+            "/logos/css.svg",
+            "/logos/jsl.svg",
+            "/logos/logos_react.svg",
+        ],
         img: "/sistemaStock.jpeg",
         linkGit: "",
         link: "",
     },
 ];
+const MAX_DESCRIPTION_LENGTH = 250; // Longitud máxima deseada
 ---
 
 <section class="w-11/12 py-3 mx-auto overflow-hidden">
@@ -54,17 +80,74 @@ const data: tarjetas[] = [
             PROYECTOS
         </h1>
     </div>
-    <div
+    <div class="container mx-auto py-8">
+        <div class="flex flex-col items-center md:flex-row gap-4">
+            {
+                data.map((project, index) => (
+                    <div class="w-[400px] h-[500px] flex flex-col justify-around rounded-lg shadow-lg overflow-hidden border-2 border-blue-950 ">
+                        <img
+                            src={project.img}
+                            alt={project.title}
+                            class="w-full object-cover "
+                        />
+                        <div class="p-4">
+                            <h3 class="text-xl font-semibold mb-2 text-cyan-50">
+                                {project.title}
+                            </h3>
+                        </div>
+
+                        <div class="p-4 ">
+                            <p class="text-cyan-50">
+                                {" "}
+                                {project.description.length >
+                                MAX_DESCRIPTION_LENGTH
+                                    ? project.description.slice(
+                                          0,
+                                          MAX_DESCRIPTION_LENGTH,
+                                      ) + "..."
+                                    : project.description}
+                            </p>
+                        </div>
+                        <div class=" p-4 flex gap-2 items-center mt-5 text-cyan-50">
+                            <span>Tech stack:</span>
+                            <div class="flex">
+                                {project.lenguajes.map((item, i) => (
+                                    <img key={i} class="w-[30px]" src={item} />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+    <!--  <div
         class="w-full flex flex-col items-center rounded-md overflow-hidden md:flex-row justify-center gap-6"
     >
         {
             data.map((proyecto) => (
-                <div class="w-96 h-[400px] border-2 border-blue-950 rounded-md ">
+                <div class="w-96  flex-column justify-between  border-2 border-blue-950 rounded-md ">
                     <div class="w-full">
                         <img src={proyecto.img} alt="" />
+                    </div>
+
+                    <div class="p-5 flex-column justify-between">
+                        <h1 class="text-[#D9D9D9] text-center text-4xl font-bold">
+                            {proyecto.title}
+                        </h1>
+                        <p class="text-[#D9D9D9] text-center mt-2">
+                            {proyecto.description}
+                        </p>
+
+                        <span class=" flex gap-2 text-center text-[#D9D9D9]">
+                            Tech stack :
+                            {proyecto.lenguajes.map((item) => (
+                                <img class="w-[30px]" src={item} />
+                            ))}
+                        </span>
                     </div>
                 </div>
             ))
         }
-    </div>
+    </div> -->
 </section>
