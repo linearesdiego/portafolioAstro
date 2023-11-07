@@ -17,7 +17,7 @@ import { fade } from "astro:transitions";
     const close = document.getElementById("close") as HTMLElement;
     const navbarItems = menu.querySelectorAll("a");
     menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("flex");
+        menu.style.display = "flex";
     });
     close.addEventListener("click", () => {
         menu.classList.toggle("hidden");
