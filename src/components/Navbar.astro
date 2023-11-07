@@ -25,7 +25,7 @@ import { fade } from "astro:transitions";
 
     navbarItems.forEach((item) => {
         item.addEventListener("click", () => {
-            menu.classList.add("hidden");
+            menu.style.display = "none";
         });
     });
 </script>
