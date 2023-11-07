@@ -20,7 +20,7 @@ import { fade } from "astro:transitions";
         menu.style.display = "flex";
     });
     close.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+        menu.style.display = "none";
     });
 
     navbarItems.forEach((item) => {
