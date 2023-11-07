@@ -17,7 +17,7 @@ import { fade } from "astro:transitions";
     const close = document.getElementById("close") as HTMLElement;
     const navbarItems = menu.querySelectorAll("a");
     menuBtn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
     });
     close.addEventListener("click", () => {
         menu.classList.toggle("hidden");
@@ -65,7 +65,7 @@ import { fade } from "astro:transitions";
         />
     </nav>
     <nav
-        class="px-6 pt-2 fixed flex max-w-full top-0 inset-x-0 bottom-0 w-screen flex-col gap-2 overflow-y-auto backdrop-blur-xl backdrop-saturate-150 bg-background/70 lg:hidden"
+        class="px-6 pt-2 fixed flex max-w-full top-0 inset-x-0 bottom-0 w-screen flex-col gap-2 overflow-y-auto backdrop-blur-xl backdrop-saturate-150 bg-background/70 hiiden"
         id="menu"
     >
         <img
