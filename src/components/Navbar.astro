@@ -2,21 +2,42 @@
 
 ---
 
-<header class="w-11/12 py-8 mx-auto overflow-hidden">
+<script>
+    window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar") as HTMLElement;
+        if (window.scrollY > 10) {
+            navbar.style.backgroundColor = "#090e16";
+        } else {
+            navbar.style.backgroundColor = "rgba(38, 95, 117, 0.089)";
+        }
+    });
+</script>
+<header
+    class="w-11/12 py-8 mx-auto overflow-hidden sticky top-0 inset-x-0 header"
+>
     <nav
-        class="w-full h-15 flex items-center justify-between bg-custom-color rounded-[16px] py-4 p-7"
+        class="w-full h-15 navbar flex items-center justify-between bg-custom-color rounded-[16px] py-4 p-7"
     >
-        <img class="w-[20px]" src="/Logo.svg" alt="" />
+        <img class="w-10 md:w-10" src="/Logo.svg" alt="" />
         <div class="flex items-center gap-4">
-            <li class="text-[#FFFFFF80] list-none cursor-pointer font-bold text-sm">
+            <a
+                href="#home"
+                class="text-yellow-50 list-none cursor-pointer font-bold text-sm md:text-lg"
+            >
                 Home
-            </li>
-            <li class="text-[#FFFFFF80] list-none cursor-pointer font-bold text-sm">
+            </a>
+            <a
+                href="#skills"
+                class="text-sm text-yellow-50 list-none cursor-pointer font-bold md:text-lg"
+            >
                 Skills
-            </li>
-            <li class="text-[#FFFFFF80] list-none cursor-pointer font-bold text-sm">
+            </a>
+            <a
+                href="#experiencia"
+                class="text-yellow-50 list-none cursor-pointer font-bold text-sm md:text-lg"
+            >
                 Proyectos
-            </li>
+            </a>
         </div>
     </nav>
 </header>

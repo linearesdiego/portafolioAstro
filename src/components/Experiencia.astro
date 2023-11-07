@@ -11,65 +11,47 @@ const data: tarjetas[] = [
     {
         title: "Sistema de stock",
         description:
-            "Desarrollé un robusto Sistema de Stock utilizando una variedad de tecnologías web modernas. Este sistema fue diseñado para abordar eficazmente los desafíos de gestión de inventario.",
+            "Desarrollé un robusto Sistema de Stock utilizando una variedad de tecnologías web modernas. Este sistema fue diseñado para abordar eficazmente los desafíos de gestión de inventario para locales y empresas.",
         lenguajes: [
-            "/logos/html.svg",
-            "/logos/css.svg",
-            "/logos/jsl.svg",
             "/logos/logos_react.svg",
+            "/logos/css.svg",
             "/logos/redux.svg",
         ],
-        img: "/sistemaStock.jpeg",
+        img: "/sistema.jpeg",
         linkGit: "",
-        link: "",
+        link: "https://testing.stckmanager.com/",
     },
     {
-        title: "Sistema de stock (Carniceria)",
+        title: "Pagina Web",
         description:
-            "Desarrollé un robusto Sistema de Stock utilizando una variedad de tecnologías web modernas. Este sistema fue diseñado para abordar eficazmente los desafíos de gestión de inventario.",
-        lenguajes: [
-            "/logos/html.svg",
-            "/logos/css.svg",
-            "/logos/jsl.svg",
-            "/logos/logos_react.svg",
-            "/logos/redux.svg",
-        ],
-        img: "/sistemaStock.jpeg",
+            "Desarrollé un robusto Sistema de Stock utilizando una variedad de tecnologías web modernas. Este sistema fue diseñado para abordar eficazmente los desafíos de gestión de inventario para locales y empresas.",
+        lenguajes: ["/logos/logos_react.svg", "/logos/css.svg"],
+        img: "/paginaWeb.jpeg",
         linkGit: "",
-        link: "",
+        link: "https://agustin.minos.urltemporal.com/web/",
     },
     {
         title: "Booking Clone",
         description:
             "Este proyecto es un clon inspirado en la aplicación original Booking que se centra en metodo para alquilar hoteles,etc. Mi objetivo al crear este clon fue aprender y practicar mis habilidades de desarrollo web.",
-        lenguajes: [
-            "/logos/html.svg",
-            "/logos/css.svg",
-            "/logos/jsl.svg",
-            "/logos/logos_react.svg",
-        ],
-        img: "/sistemaStock.jpeg",
+        lenguajes: ["/logos/logos_react.svg", "/logos/css.svg"],
+        img: "/booking.jpeg",
         linkGit: "",
-        link: "",
+        link: "https://booking-clone-ktrteci3e-linearesdiego.vercel.app/",
     },
     {
         title: "Todo App (Drag and Drop)",
-        description: "Sistema de stock",
-        lenguajes: [
-            "/logos/html.svg",
-            "/logos/css.svg",
-            "/logos/jsl.svg",
-            "/logos/logos_react.svg",
-        ],
-        img: "/sistemaStock.jpeg",
+        description:
+            "Este proyecto es un clon inspirado en la aplicación original Booking que se centra en metodo para alquilar hoteles,etc. Mi objetivo al crear este clon fue aprender y practicar mis habilidades de desarrollo web.",
+        lenguajes: ["/logos/logos_react.svg", "/logos/css.svg"],
+        img: "/reactDragOnDrop.jpeg",
         linkGit: "",
-        link: "",
+        link: "https://todo-app-drang-and-drop.vercel.app/",
     },
 ];
-const MAX_DESCRIPTION_LENGTH = 250; // Longitud máxima deseada
 ---
 
-<section class="w-11/12 py-3 mx-auto overflow-hidden">
+<section id="experiencia" class="w-11/12 py-3 mx-auto overflow-hidden">
     <div class="w-full flex flex-col gap-6 items-center mt-4">
         <span
             class="text-xl p-4 rounded-[16px] bg-custom-color text-blue-900 font-bold w-fit text-center"
@@ -80,74 +62,68 @@ const MAX_DESCRIPTION_LENGTH = 250; // Longitud máxima deseada
             PROYECTOS
         </h1>
     </div>
-    <div class="container mx-auto py-8">
-        <div class="flex flex-col items-center md:flex-row gap-4">
-            {
-                data.map((project, index) => (
-                    <div class="w-[400px] h-[500px] flex flex-col justify-around rounded-lg shadow-lg overflow-hidden border-2 border-blue-950 ">
-                        <img
-                            src={project.img}
-                            alt={project.title}
-                            class="w-full object-cover "
-                        />
-                        <div class="p-4">
-                            <h3 class="text-xl font-semibold mb-2 text-cyan-50">
-                                {project.title}
-                            </h3>
-                        </div>
-
-                        <div class="p-4 ">
-                            <p class="text-cyan-50">
-                                {" "}
-                                {project.description.length >
-                                MAX_DESCRIPTION_LENGTH
-                                    ? project.description.slice(
-                                          0,
-                                          MAX_DESCRIPTION_LENGTH,
-                                      ) + "..."
-                                    : project.description}
-                            </p>
-                        </div>
-                        <div class=" p-4 flex gap-2 items-center mt-5 text-cyan-50">
-                            <span>Tech stack:</span>
-                            <div class="flex">
-                                {project.lenguajes.map((item, i) => (
-                                    <img key={i} class="w-[30px]" src={item} />
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                ))
-            }
-        </div>
-    </div>
-    <!--  <div
-        class="w-full flex flex-col items-center rounded-md overflow-hidden md:flex-row justify-center gap-6"
+    <div
+        class="lg:w-full flex gap-6 flex-row flex-wrap items-center justify-between"
     >
         {
             data.map((proyecto) => (
-                <div class="w-96  flex-column justify-between  border-2 border-blue-950 rounded-md ">
-                    <div class="w-full">
-                        <img src={proyecto.img} alt="" />
-                    </div>
-
-                    <div class="p-5 flex-column justify-between">
-                        <h1 class="text-[#D9D9D9] text-center text-4xl font-bold">
+                <div class="w-96 bg-custom-color shadow-lg rounded-3xl overflow-hidden">
+                    <img
+                        src={proyecto.img}
+                        class="object-cover aspect-video"
+                        alt="proyecto 2"
+                    />
+                    <div class="w-full text-center px-4">
+                        <h3 class="mt-6 text-blue-900 uppercase text-xl font-bold">
                             {proyecto.title}
-                        </h1>
-                        <p class="text-[#D9D9D9] text-center mt-2">
-                            {proyecto.description}
-                        </p>
-
-                        <span class=" flex gap-2 text-center text-[#D9D9D9]">
-                            Tech stack :
+                        </h3>
+                        <div class="my-6 flex justify-center gap-4">
                             {proyecto.lenguajes.map((item) => (
-                                <img class="w-[30px]" src={item} />
+                                <img width={30} src={item} alt="" />
                             ))}
-                        </span>
+                        </div>
+                        <div class="flex justify-between my-6 px-6">
+                            <a
+                                href={proyecto.link}
+                                class="flex items-center gap-2"
+                                target="_blank"
+                            >
+                                <img
+                                    src="/vistaPrevia.svg"
+                                    class=""
+                                    width={20}
+                                    alt="GitHub"
+                                />
+
+                                <h4 class="underline text-slate-50">
+                                    Vista Previa
+                                </h4>
+                            </a>
+                            <a
+                                href="https://github.com/thomivargas/apiPeliculas"
+                                class="flex items-center gap-2"
+                                target="_blank"
+                            >
+                                <img
+                                    src="/logos/github.svg"
+                                    class=""
+                                    width={20}
+                                    alt="GitHub"
+                                />
+                                <h4 class="underline text-slate-50">
+                                    Ver codigo
+                                </h4>
+                            </a>
+                        </div>
                     </div>
                 </div>
             ))
         }
+    </div>
+
+    <!--  <div
+        class="w-full flex flex-col items-center rounded-md overflow-hidden md:flex-row justify-center gap-6"
+    >
+        
     </div> -->
 </section>
