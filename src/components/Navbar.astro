@@ -1,5 +1,5 @@
 ---
-
+import { fade } from "astro:transitions";
 ---
 
 <script>
@@ -11,6 +11,23 @@
             navbar.style.backgroundColor = "rgba(38, 95, 117, 0.089)";
         }
     });
+
+    const menuBtn = document.getElementById("menuBtn") as HTMLElement;
+    const menu = document.getElementById("menu") as HTMLElement;
+    const close = document.getElementById("close") as HTMLElement;
+    const navbarItems = menu.querySelectorAll("a");
+    menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+    close.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+    });
+
+    navbarItems.forEach((item) => {
+        item.addEventListener("click", () => {
+            menu.classList.add("hidden");
+        });
+    });
 </script>
 <header
     class="w-11/12 py-8 mx-auto overflow-hidden sticky top-0 inset-x-0 header"
@@ -19,7 +36,7 @@
         class="w-full h-15 navbar flex items-center justify-between bg-custom-color rounded-[16px] py-4 p-7"
     >
         <img class="w-10 md:w-10" src="/Logo.svg" alt="" />
-        <div class="flex items-center gap-4">
+        <div class="hidden lg:flex items-center gap-4">
             <a
                 href="#home"
                 class="text-yellow-50 list-none cursor-pointer font-bold text-sm md:text-lg"
@@ -38,6 +55,50 @@
             >
                 Proyectos
             </a>
+        </div>
+
+        <img
+            class="w-[24px] object-cover cursor-pointer lg:hidden"
+            src="/menu.svg"
+            alt=""
+            id="menuBtn"
+        />
+    </nav>
+    <nav
+        class="px-6 pt-2 fixed flex max-w-full top-0 inset-x-0 bottom-0 w-screen flex-col gap-2 overflow-y-auto backdrop-blur-xl backdrop-saturate-150 bg-background/70"
+        id="menu"
+    >
+        <img
+            id="close"
+            class="w-[24px] object-cover invert cursor-pointer absolute right-4 top-5"
+            src="close.svg"
+            alt=""
+        />
+        <div class="w-full h-full">
+            <div
+                class="w-full h-full flex flex-col items-center justify-center gap-7"
+            >
+                <img class="w-20 md:w-10" src="/Logo.svg" alt="" />
+
+                <a
+                    href="#home"
+                    class="text-yellow-50 list-none cursor-pointer font-bold text-xl"
+                >
+                    Home
+                </a>
+                <a
+                    href="#skills"
+                    class="text-yellow-50 list-none cursor-pointer font-bold text-xl"
+                >
+                    Skills
+                </a>
+                <a
+                    href="#experiencia"
+                    class="text-yellow-50 list-none cursor-pointer font-bold text-xl"
+                >
+                    Proyectos
+                </a>
+            </div>
         </div>
     </nav>
 </header>
